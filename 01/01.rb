@@ -35,15 +35,3 @@ class String
 end
 
 puts decode(File.read('input.txt')) # 55652
-# dec.each {|trio| puts "%s, %s, %s" % trio}
-nicks_file = File.read('nicks.txt')
-nicks_file.lines.each do |line|
-  pieces = line.split(',')
-  my_answer = decode(pieces[2]).to_i
-  nicks_answer = pieces[1].to_i
-  if my_answer != nicks_answer
-    puts "Expected: #{nicks_answer}, Got: #{my_answer}, for line #{pieces[2]}"
-  end
-end
-# puts decode('fzpbhtmdvseven2one')
-
