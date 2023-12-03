@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 def valid_games_sum(str, color_counts)
   str.lines.map do |line|
     game_id = line[/\d+/]
