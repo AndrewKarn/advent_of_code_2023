@@ -1,12 +1,12 @@
 # frozen_string_literal: true
-def valid_games_sum(str, maximum = { red: 0, green: 0, blue: 0 })
+def valid_games_sum(str, color_counts)
   valid_games_ids = []
   str.lines.map do |line|
     game_id = line.scan(/\d+/).first
     can_add = true
     line.scan(/\d+ \w+/).map do |round|
       count, color = round.split
-      if maximum[color.to_sym] < count.to_i
+      if color_counts[color.to_sym] < count.to_i
         can_add = false
         break
       end
